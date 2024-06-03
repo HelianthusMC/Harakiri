@@ -7,14 +7,11 @@ import net.minecraft.entity.player.EntityPlayer;
 
 import java.util.HashMap;
 
-public class PopCounter
-        extends Module {
-    public static HashMap<String, Integer> TotemPopContainer = new HashMap();
-    private static PopCounter INSTANCE = new PopCounter();
+public class PopCounter extends Module {
+    final Minecraft mc = Minecraft.getMinecraft();
 
     public PopCounter() {
-        super("PopCounter", "Counts other players totem pops.", Module.Category.MISC, true, false, false);
-        this.setInstance();
+        super("PopCounter", new String[]{"tm"}, "Chat based pop counter from OyVey", "NONE", -1, ModuleType.COMBAT);
     }
 
     public static PopCounter getInstance() {
@@ -38,9 +35,9 @@ public class PopCounter
             int l_Count = TotemPopContainer.get(player.getName());
             TotemPopContainer.remove(player.getName());
             if (l_Count == 1) {
-                Command.sendMessage(ChatFormatting.RED + player.getName() + " died after popping " + ChatFormatting.GREEN + l_Count + ChatFormatting.RED + " Totem!");
+                Command.sendMessage(ChatFormatting.AQUA + "[Harakiri]" + player.getName() + " died after popping " + ChatFormatting.AQUA + l_Count + ChatFormatting.AQUA + " Totem!");
             } else {
-                Command.sendMessage(ChatFormatting.RED + player.getName() + " died after popping " + ChatFormatting.GREEN + l_Count + ChatFormatting.RED + " Totems!");
+                Command.sendMessage(ChatFormatting.AQUA + "[Harakiri]" + player.getName() + " died after popping " + ChatFormatting.AQUA + l_Count + ChatFormatting.AQUA + " Totems!");
             }
         }
     }
@@ -60,9 +57,9 @@ public class PopCounter
             TotemPopContainer.put(player.getName(), l_Count);
         }
         if (l_Count == 1) {
-            Command.sendMessage(ChatFormatting.RED + player.getName() + " popped " + ChatFormatting.GREEN + l_Count + ChatFormatting.RED + " Totem.");
+            Command.sendMessage(ChatFormatting.AQUA + "[Harakiri]" + player.getName() + " popped " + ChatFormatting.AQUA + l_Count + ChatFormatting.AQUA + " Totem.");
         } else {
-            Command.sendMessage(ChatFormatting.RED + player.getName() + " popped " + ChatFormatting.GREEN + l_Count + ChatFormatting.RED + " Totems.");
+            Command.sendMessage(ChatFormatting.AQUA + "[Harakiri]" + player.getName() + " popped " + ChatFormatting.AQUA + l_Count + ChatFormatting.AQUA + " Totems.");
         }
     }
 }
