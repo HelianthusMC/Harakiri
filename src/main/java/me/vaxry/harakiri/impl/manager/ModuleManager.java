@@ -89,6 +89,7 @@ public final class ModuleManager {
         add(new PhaseModule());
         add(new FlightModule());
         add(new CrystalAuraModule());
+        add(new PopCounterModule());
         add(new AutoTotemModule());
         add(new FastBowModule());
         add(new BowBombModule());
