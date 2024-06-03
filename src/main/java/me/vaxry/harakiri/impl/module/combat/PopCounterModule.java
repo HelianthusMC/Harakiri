@@ -1,8 +1,8 @@
 package me.alpha432.oyvey.features.modules.misc;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
-import me.alpha432.oyvey.features.command.Command;
-import me.alpha432.oyvey.features.modules.Module;
+import me.vaxry.harakiri.framework.Module.Command;
+import me.vaxry.harakiri.framework.Module;
 import net.minecraft.entity.player.EntityPlayer;
 
 import java.util.HashMap;
