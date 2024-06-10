@@ -1,4 +1,4 @@
-package me.alpha432.oyvey.features.modules.misc;
+package me.vaxry.harakiri.impl.module.combat;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.vaxry.harakiri.framework.Module.Command;
